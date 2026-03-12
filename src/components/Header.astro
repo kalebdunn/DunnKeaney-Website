@@ -3,28 +3,42 @@ import Logo from '../components/Logo.astro';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' }
+    { linkText: 'Newsletter', href: '/newsletter' },
+    { linkText: 'Kaleb', href: '/kaleb' },
+    { linkText: 'James', href: '/james' }
 ];
 ---
 
-<nav class="flex flex-wrap items-center gap-4 pt-6 pb-16 sm:pt-12 sm:pb-24">
-    <a href="/">
+<nav class="site-nav">
+    <a href="/" class="brand-link">
         <Logo />
     </a>
-    {
-        !!navItems?.length && (
-            <ul class="flex flex-wrap gap-x-4 gap-y-1">
-                {navItems.map((item) => (
+    <ul class="nav-list">
+        <li>
+            <details class="nav-group">
+                <summary class="nav-link">Wedding</summary>
+                <ul class="nav-submenu">
                     <li>
-                        <a href={item.href} class="inline-block px-1.5 py-1 sm:px-3 sm:py-2">
-                            {item.linkText}
+                        <a href="/wedding" class="nav-sublink">
+                            Details
                         </a>
                     </li>
-                ))}
-            </ul>
-        )
-    }
+                    <li>
+                        <a href="/rsvp" class="nav-sublink">
+                            RSVP
+                        </a>
+                    </li>
+                </ul>
+            </details>
+        </li>
+        {
+            navItems.map((item) => (
+                <li>
+                    <a href={item.href} class="nav-link">
+                        {item.linkText}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
 </nav>

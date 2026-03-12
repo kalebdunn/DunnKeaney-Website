@@ -1,25 +1,44 @@
 @import 'tailwindcss';
 
 @theme {
-    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+    --font-serif: 'Iowan Old Style', 'Baskerville Old Face', Baskerville, 'Times New Roman', serif;
     --color-primary: #1f3a32;
     --color-primary-content: #2c3340;
     --color-complementary: #f6f1e7;
+    --color-accent: #5a1f2b;
+    --color-border: color-mix(in oklab, var(--color-primary-content) 16%, transparent);
     --background-image-noise: linear-gradient(
             to bottom,
             color-mix(in oklab, var(--color-gray-950) 0%, transparent),
-            color-mix(in oklab, var(--color-gray-950) 20%, transparent)
+            color-mix(in oklab, var(--color-gray-950) 10%, transparent)
         ),
         url('/images/noise.png');
 }
 
 @layer base {
+    body {
+        @apply text-base leading-relaxed;
+    }
+
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-4xl tracking-tight sm:text-5xl;
+        font-family: var(--font-serif);
+        font-weight: 500;
+        letter-spacing: -0.01em;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-2xl sm:text-3xl;
+        font-family: var(--font-serif);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        @apply text-xl sm:text-2xl;
+        font-family: var(--font-serif);
+        font-weight: 500;
     }
 
     a:not(.btn) {
@@ -34,9 +53,114 @@
         @apply px-1 py-0.5 font-mono rounded bg-gray-900 text-primary;
         font-size: 0.9em;
     }
+
+    label {
+        @apply block mb-2 text-sm uppercase tracking-widest;
+    }
+
+    input:not([type='checkbox']):not([type='radio']),
+    select,
+    textarea {
+        @apply block w-full px-4 py-3 rounded-none border border-solid bg-white/70 text-primary-content;
+        border-color: var(--color-border);
+    }
+
+    input:not([type='checkbox']):not([type='radio']):focus,
+    select:focus,
+    textarea:focus {
+        outline: 2px solid color-mix(in oklab, var(--color-primary) 35%, transparent);
+        outline-offset: 2px;
+    }
 }
 
 @layer components {
+    .site-nav {
+        @apply flex flex-wrap items-center gap-6 pt-8 pb-16 sm:pt-12 sm:pb-20;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .brand-link {
+        @apply no-underline;
+    }
+
+    .site-mark {
+        font-family: var(--font-serif);
+        @apply text-2xl text-primary;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .nav-list {
+        @apply flex flex-wrap gap-2;
+    }
+
+    .nav-list > li {
+        @apply relative;
+    }
+
+    .nav-group {
+        @apply relative;
+    }
+
+    .nav-link {
+        @apply inline-block px-2 py-1 text-sm no-underline;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    .nav-group > summary {
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .nav-group > summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .nav-submenu {
+        @apply absolute left-0 z-10 hidden min-w-44 p-2;
+        top: calc(100% + 0.25rem);
+        border: 1px solid var(--color-border);
+        background: color-mix(in oklab, white 40%, var(--color-complementary));
+    }
+
+    .nav-group[open] .nav-submenu,
+    .nav-list > li:hover .nav-submenu,
+    .nav-list > li:focus-within .nav-submenu {
+        @apply block;
+    }
+
+    .nav-sublink {
+        @apply block px-3 py-2 text-sm no-underline;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .page-content {
+        @apply py-12 sm:py-16;
+    }
+
+    .site-footer {
+        @apply pt-14 pb-10 text-primary/70 sm:pt-20 sm:pb-14;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .paper-panel {
+        @apply p-6 sm:p-8;
+        border: 1px solid var(--color-border);
+        background: color-mix(in oklab, white 35%, var(--color-complementary));
+    }
+
+    .eyebrow {
+        @apply mb-3 text-xs;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .section-gap {
+        @apply mt-14 sm:mt-18;
+    }
+
     .markdown {
         > * {
             @apply my-6;
@@ -59,7 +183,9 @@
         @apply inline-flex items-center justify-center gap-2 bg-primary text-white cursor-pointer text-center font-semibold no-underline transition-colors;
         padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
         font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
+        border-radius: 0;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
 
         &:hover {
             @apply bg-primary/85;
@@ -74,5 +200,20 @@
         --btn-font-size: 1.125rem;
         --btn-px: 1.5rem;
         --btn-py: 1.125rem;
+    }
+
+    .btn-accent {
+        background: var(--color-accent);
+    }
+
+    .btn-accent:hover {
+        background: color-mix(in oklab, var(--color-accent) 85%, black);
+    }
+
+    .sr-only-field {
+        position: absolute;
+        left: -9999px;
+        opacity: 0;
+        pointer-events: none;
     }
 }

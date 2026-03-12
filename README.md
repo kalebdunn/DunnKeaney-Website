@@ -41,3 +41,7 @@ netlify link
 ```
 npm run dev
 ```
+
+## RSVP Google Sheets Integration
+
+See setup guide: `docs/rsvp-google-sheets.md`
