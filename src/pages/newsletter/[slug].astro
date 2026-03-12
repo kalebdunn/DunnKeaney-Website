@@ -1,0 +1,34 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const entries = await getCollection('newsletter', ({ data }) => !data.draft);
+    return entries.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { slug: entry.slug }
+    }));
+}
+
+const { slug } = Astro.props;
+const entry = await getEntry('newsletter', slug);
+
+if (!entry || entry.data.draft) {
+    return Astro.redirect('/newsletter');
+}
+
+const { Content } = await render(entry);
+---
+
+<Layout title={`${entry.data.title} | Newsletter | Dunn-Keaney`}>
+    <article class="max-w-3xl">
+        <p class="eyebrow text-primary">Newsletter</p>
+        <h1 class="mb-4">{entry.data.title}</h1>
+        <p class="mb-10 text-sm text-primary/70">{entry.data.date.toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
+        <div class="paper-panel">
+            <div class="markdown">
+                <Content />
+            </div>
+        </div>
+    </article>
+</Layout>

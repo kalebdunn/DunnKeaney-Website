@@ -1,0 +1,15 @@
+Kaleb Dunnlinkedin.com/in/kaleb-dunn | kalebdunn@gmail.com | Nashville, TN (Open to Relocation)
+SUMMARY
+Strategy & Ops / BizOps operator with 4+ years across healthcare, financial services, and industrial/manufacturing. Builds operating cadence, decision infrastructure, and KPI-driven execution (SQL/Excel, Agile/ADO).
+Selected Impact: 200-system landscape across 300+ sites / 20 states | 34k clinician pay-data review; top 500 prioritized | 80% denial drivers isolated | +20% sprint throughput as PO
+EXPERIENCE
+Ankura — Strategy & Performance | Senior Associate (Aug 2024 – Present)
+Owned cross-functional execution cadence (prioritization options, risk/issue framing, ADO reporting) to drive decisions and unblock delivery.
+Selected outcomes & leadership:
+• Clinical Ops Tech Strategy: Developed roadmap options for $30M technology portfolio; synthesized 200-system landscape across 300+ sites / 20 states into governance-ready recommendations.• Physician Pay Data Accuracy (Post-M&A): Flagged pay-data inaccuracies across 34k clinicians; prioritized ~500 highest-risk cases for remediation.• Denial Analytics: Isolated 2 drivers causing ~80% of denials; built estimate→claim→denial matching (SQL/Excel) to support fixes/disputes.• Rewards Product (PO): Owned backlog for team (~20); improved throughput +20% via refinement/velocity hygiene and decision cadence; coached PM backfill.• Claims System (SM/Coach): Ran 4–5 ceremonies/week for team (~10) building Salesforce claims module; instituted ways-of-working + ADO dashboards.
+Razorleaf Corporation | Consultant (Feb 2022 – Oct 2023)
+• Owned PLM/SPDM implementation and support workstreams including customization and integrations for industrial clients.• Built internal extensions and tooling and increased delivery capacity by training peers/interns.
+EDUCATION
+Purdue University — Master of Engineering Management, 2024Purdue University — B.S. Industrial Engineering, 2022
+SKILLS
+Strategy & Ops: Operating cadence, OKR/KPI/process design, Roadmap & prioritization, Governance-ready decision support, Stakeholder alignmentExecution: Product Owner / Scrum, Sprint planning, Backlog refinement, Team chartering, Workshop facilitationAnalytics: SQL, Root cause/Pareto analysis, Excel modeling, DashboardingTools: Excel, PowerPoint, Azure DevOps, Smartsheet, Figma; Python/C#/JavaScript/Postman
