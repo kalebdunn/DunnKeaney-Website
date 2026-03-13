@@ -1,9 +1,12 @@
 ---
 import Logo from '../components/Logo.astro';
 
-const navItems = [
+const primaryNavItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Newsletter', href: '/newsletter' },
+    { linkText: 'Newsletter', href: '/newsletter' }
+];
+
+const personalNavItems = [
     { linkText: 'Kaleb', href: '/kaleb' },
     { linkText: 'James', href: '/james' }
 ];
@@ -14,6 +17,15 @@ const navItems = [
         <Logo />
     </a>
     <ul class="nav-list">
+        {
+            primaryNavItems.map((item) => (
+                <li>
+                    <a href={item.href} class="nav-link">
+                        {item.linkText}
+                    </a>
+                </li>
+            ))
+        }
         <li>
             <details class="nav-group">
                 <summary class="nav-link">Wedding</summary>
@@ -31,8 +43,9 @@ const navItems = [
                 </ul>
             </details>
         </li>
+        <li class="nav-divider" aria-hidden="true">|</li>
         {
-            navItems.map((item) => (
+            personalNavItems.map((item) => (
                 <li>
                     <a href={item.href} class="nav-link">
                         {item.linkText}

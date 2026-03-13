@@ -108,6 +108,10 @@
         text-transform: uppercase;
     }
 
+    .nav-divider {
+        @apply px-1 py-1 text-sm text-primary/45;
+    }
+
     .nav-group > summary {
         list-style: none;
         cursor: pointer;
@@ -145,6 +149,15 @@
         border-top: 1px solid var(--color-border);
     }
 
+    .site-footer-inner {
+        @apply flex items-end justify-between gap-6;
+    }
+
+    .footer-mascot {
+        @apply block w-28 sm:w-36;
+        mix-blend-mode: multiply;
+    }
+
     .paper-panel {
         @apply p-6 sm:p-8;
         border: 1px solid var(--color-border);
@@ -159,6 +172,40 @@
 
     .section-gap {
         @apply mt-14 sm:mt-18;
+    }
+
+    .home-intro {
+        @apply max-w-5xl;
+    }
+
+    .home-columns {
+        @apply grid gap-6 md:grid-cols-[minmax(0,1.5fr)_minmax(18rem,1fr)];
+    }
+
+    .home-image {
+        @apply w-full overflow-hidden;
+        border: 1px solid var(--color-border);
+    }
+
+    .home-image img {
+        @apply block w-full h-auto;
+    }
+
+    .home-list {
+        @apply space-y-3 text-sm sm:text-base;
+    }
+
+    .wedding-grid {
+        @apply grid gap-6 lg:grid-cols-[minmax(18rem,0.95fr)_minmax(0,1.05fr)] lg:items-start;
+    }
+
+    .wedding-image {
+        @apply overflow-hidden;
+        border: 1px solid var(--color-border);
+    }
+
+    .wedding-image img {
+        @apply block w-full h-auto;
     }
 
     .markdown {

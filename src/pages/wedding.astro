@@ -18,34 +18,40 @@ const wedding = {
         <p class="mb-10">We are grateful to celebrate with our family and friends.</p>
     </section>
 
-    <section class="paper-panel max-w-3xl">
-        <div class="grid gap-8 sm:grid-cols-2">
-            <div>
-                <p class="eyebrow text-primary">Date</p>
-                <p>{wedding.date}</p>
+    <section class="wedding-grid">
+        <figure class="wedding-image">
+            <img src="/images/wedding-portrait.jpg" alt="Kaleb and James with their dog in formalwear." />
+        </figure>
+
+        <div class="paper-panel">
+            <div class="grid gap-8 sm:grid-cols-2">
+                <div>
+                    <p class="eyebrow text-primary">Date</p>
+                    <p>{wedding.date}</p>
+                </div>
+                <div>
+                    <p class="eyebrow text-primary">Time</p>
+                    <p>{wedding.time}</p>
+                </div>
+                <div>
+                    <p class="eyebrow text-primary">Venue</p>
+                    <p>{wedding.venue}</p>
+                </div>
+                <div>
+                    <p class="eyebrow text-primary">Location</p>
+                    <p>{wedding.cityState}</p>
+                </div>
+                <div>
+                    <p class="eyebrow text-primary">Dress Code</p>
+                    <p>{wedding.dressCode}</p>
+                </div>
             </div>
-            <div>
-                <p class="eyebrow text-primary">Time</p>
-                <p>{wedding.time}</p>
-            </div>
-            <div>
-                <p class="eyebrow text-primary">Venue</p>
-                <p>{wedding.venue}</p>
-            </div>
-            <div>
-                <p class="eyebrow text-primary">Location</p>
-                <p>{wedding.cityState}</p>
-            </div>
-            <div>
-                <p class="eyebrow text-primary">Dress Code</p>
-                <p>{wedding.dressCode}</p>
+
+            <div class="mt-10 pt-8" style="border-top: 1px solid var(--color-border);">
+                <p class="eyebrow text-primary">RSVP</p>
+                <p class="mb-5">Please respond using the online form.</p>
+                <a href="/rsvp" class="btn btn-accent">Go to RSVP</a>
             </div>
         </div>
-    </section>
-
-    <section class="section-gap max-w-3xl">
-        <h2 class="mb-4">RSVP</h2>
-        <p class="mb-6">Please respond using the form below.</p>
-        <a href="/rsvp" class="btn btn-accent">Go to RSVP</a>
     </section>
 </Layout>

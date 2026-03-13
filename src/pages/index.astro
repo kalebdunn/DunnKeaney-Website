@@ -3,25 +3,34 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Dunn-Keaney">
-    <section class="max-w-3xl">
-        <p class="eyebrow text-primary">Dunn-Keaney</p>
-        <h1 class="mb-8">A personal site for family, writing, and correspondence.</h1>
-        <p class="max-w-2xl">
-            This is a quiet home on the web for announcements, letters, and selected personal work.
+    <section class="home-intro">
+        <h1 class="mb-8">Welcome to the digital threshold of the Dunn-Keaney household.</h1>
+        <p class="max-w-4xl">
+            This site holds announcements, letters, and selected personal work from James and Kaleb, alongside a small amount of professional information and wedding details.
         </p>
     </section>
 
-    <section class="section-gap grid gap-4 sm:grid-cols-2">
-        <a href="/wedding" class="paper-panel no-underline hover:opacity-90">
-            <p class="eyebrow text-primary">Wedding</p>
-            <h2 class="mb-3 text-2xl">Celebration details</h2>
-            <p>Schedule, location, and event notes.</p>
-        </a>
+    <figure class="section-gap home-image">
+        <img src="/images/home-portrait-wide.jpg" alt="James and Kaleb together outdoors in the evening." />
+    </figure>
 
-        <a href="/rsvp" class="paper-panel no-underline hover:opacity-90">
-            <p class="eyebrow text-primary">RSVP</p>
-            <h2 class="mb-3 text-2xl">Respond online</h2>
-            <p>Please submit your response and any dietary notes.</p>
-        </a>
+    <section class="section-gap home-columns">
+        <div class="paper-panel">
+            <p class="eyebrow text-primary">Purpose</p>
+            <h2 class="mb-4 text-2xl">A small household archive</h2>
+            <p class="mb-4">
+                This site will hold family letters, personal work, and occasional public notes - it also has information about our upcoming wedding.
+            </p>
+        </div>
+
+        <aside class="paper-panel">
+            <p class="eyebrow text-primary">Current Sections</p>
+            <ul class="home-list">
+                <li><a href="/newsletter">Newsletter</a> for family letters and updates.</li>
+                <li><a href="/wedding">Wedding</a> for celebration details and RSVP.</li>
+                <li><a href="/kaleb">Kaleb</a> for information about Kaleb and his thoughts.</li>
+                <li><a href="/james">James</a> for information about James and his thoughts.</li>
+            </ul>
+        </aside>
     </section>
 </Layout>
