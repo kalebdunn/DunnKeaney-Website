@@ -1,0 +1,21 @@
+
+> astro-netlify-platform-starter@0.1.0 dev
+> astro dev
+
+[2m20:31:27[22m [34m[@astrojs/netlify][39m Enabling sessions with Netlify Blobs
+[2m20:31:27[22m [34m[vite][39m Environment loaded
+[2m20:31:27[22m [34m[vite][39m Middleware loaded. Emulating features: blobs, edgeFunctions, environmentVariables, functions, geolocation, headers, images, redirects, static.
+[2m20:31:27[22m [34m[vite][39m 💭 Linking this project to a Netlify site lets you deploy your site, use any environment variables defined on your team and site and much more. Run npx netlify init to get started.
+[2m20:31:27[22m [34m[types][39m Generated [2m1ms[22m
+[2m20:31:28[22m [34m[content][39m Syncing content
+[2m20:31:28[22m [34m[content][39m Synced content
+[2m20:31:28[22m [34m[vite][39m Port 4321 is in use, trying another one...
+
+[42m[1m astro [22m[49m [32mv5.16.6[39m [2mready in[22m 1583 [2mms[22m
+
+[2m┃[22m Local    [36mhttp://localhost:4322/[39m
+[2m┃[22m Network  [2muse --host to expose[22m
+
+[2m20:31:28[22m [32mwatching for file changes...[39m
+[2m20:32:20[22m [34m[200][39m /api/rsvp-lookup [2m510ms[22m
+[2m20:32:56[22m [34m[200][39m /rsvp [2m104ms[22m
