@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const faqs = [
+    {
+        question: 'Where is the wedding?',
+        answer: 'The wedding will be at Mellwood Arts Center, 1860 Mellwood Ave, Louisville, KY 40206.'
+    },
+    {
+        question: 'Where at Mellwood Arts Center should guests go?',
+        answer: 'Both the ceremony and reception will be held at Mellwood Arts Center in the Picasso Room.'
+    },
+    {
+        question: 'What time should guests arrive?',
+        answer: 'Please plan to arrive around 3:30 PM. The ceremony begins at 4:00 PM.'
+    },
+    {
+        question: 'Is parking available?',
+        answer: 'Yes. Free parking is available at the venue.'
+    },
+    {
+        question: 'Will there be dinner and drinks?',
+        answer: 'Yes. Dinner and a bar will be provided. There will not be a separate cocktail hour.'
+    },
+    {
+        question: 'What about dietary restrictions?',
+        answer: 'Please note any dietary needs when you complete your RSVP, and we will do our best to accommodate them.'
+    },
+    {
+        question: 'Are children invited?',
+        answer: 'Yes. Please include them in your attendee count when you complete your RSVP.'
+    },
+    {
+        question: 'Can I bring a plus-one?',
+        answer: 'The attendee count shown in the RSVP form reflects the number of guests included in your party.'
+    },
+    {
+        question: 'What should I wear?',
+        answer: 'Cocktail attire. Suits or suit-separates are welcome, along with dresses, jumpsuits, or other dressier clothes. Please avoid jeans or polos.'
+    },
+    {
+        question: 'Are there wedding colors?',
+        answer: 'The wedding colors are jewel tones. Feel free to join in, or simply wear something you feel confident in.'
+    },
+    {
+        question: 'Will the wedding be indoors or outdoors?',
+        answer: 'The wedding will be indoors.'
+    },
+    {
+        question: 'When is the RSVP deadline?',
+        answer: 'Please RSVP by August 1, 2026.'
+    },
+    {
+        question: 'What if I need to change my RSVP?',
+        answer: 'Please contact Kaleb or James if you need to update your response after submitting.'
+    },
+    {
+        question: 'Do you have a registry?',
+        answer: 'Yes. Our registry is available through Crate & Barrel.'
+    },
+    {
+        question: 'Who should I contact with questions?',
+        answer: 'Please reach out to Kaleb or James.'
+    }
+];
+---
+
+<Layout title="Wedding FAQ | Dunn-Keaney">
+    <section class="max-w-3xl">
+        <p class="eyebrow text-primary">Wedding</p>
+        <h1 class="mb-6">Frequently Asked Questions</h1>
+        <p class="mb-10">A few practical notes for joining us in Louisville.</p>
+    </section>
+
+    <section class="paper-panel max-w-4xl">
+        <dl class="faq-list">
+            {
+                faqs.map((item) => (
+                    <div class="faq-item">
+                        <dt>{item.question}</dt>
+                        <dd>
+                            {item.question === 'Do you have a registry?' ? (
+                                <>
+                                    Yes. Our registry is available through{' '}
+                                    <a href="https://www.crateandbarrel.com/gift-registry/james-keaney-and-kaleb-dunn/r7523524">
+                                        Crate & Barrel
+                                    </a>
+                                    .
+                                </>
+                            ) : (
+                                item.answer
+                            )}
+                        </dd>
+                    </div>
+                ))
+            }
+        </dl>
+
+        <div class="mt-10 flex flex-wrap gap-3 pt-8" style="border-top: 1px solid var(--color-border);">
+            <a href="/rsvp" class="btn btn-accent">Go to RSVP</a>
+            <a href="/wedding" class="btn">Wedding Details</a>
+        </div>
+    </section>
+</Layout>

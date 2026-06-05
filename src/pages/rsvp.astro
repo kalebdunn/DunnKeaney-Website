@@ -6,15 +6,15 @@ import Layout from '../layouts/Layout.astro';
     <section class="max-w-3xl">
         <p class="eyebrow text-primary">RSVP</p>
         <h1 class="mb-6">Wedding Response</h1>
-        <p class="mb-10">Step 1: confirm your invitation by name. Step 2: submit one response for your household.</p>
+        <p class="mb-4">Step 1: confirm your invitation by name. Step 2: submit one response for your household.</p>
+        <p class="mb-10 text-sm text-primary/70">Please RSVP by August 1, 2026.</p>
     </section>
 
     <section class="paper-panel max-w-3xl">
         <form id="lookup-form" class="space-y-6">
             <div>
-                <label for="lookup-full-name">Full Name</label>
+                <label for="lookup-full-name">Name</label>
                 <input id="lookup-full-name" name="fullName" type="text" required autocomplete="name" />
-                <p class="mt-2 text-sm text-primary/70">Use the name shown on your invitation.</p>
             </div>
             <button type="submit" class="btn">Continue</button>
             <p id="lookup-status" class="text-sm" aria-live="polite"></p>
@@ -41,6 +41,7 @@ import Layout from '../layouts/Layout.astro';
             <div>
                 <label for="attending-count">Number Attending</label>
                 <input id="attending-count" name="attendingCount" type="number" min="0" max="20" value="0" required />
+                <p class="mt-2 text-sm text-primary/70">Include everyone in your household or family unit who will attend, including children.</p>
             </div>
 
             <div>
@@ -93,21 +94,24 @@ import Layout from '../layouts/Layout.astro';
             if (!response.ok) throw new Error(data.error || 'Lookup failed');
 
             if (data.responded) {
-                lookupStatus.textContent = 'This household has already submitted an RSVP. Please contact the hosts for changes.';
+                lookupStatus.textContent = 'This household has already submitted an RSVP. Please contact Kaleb or James if you need to make a change.';
                 return;
             }
 
             maxAttendees = Number(data.maxAttendees || 1);
             submitNameInput.value = fullName;
             matchedHousehold.textContent = data.primaryContact ? `Household: ${data.primaryContact}` : 'Household verified.';
-            maxAttendeesText.textContent = `This invitation allows up to ${maxAttendees} attendee${maxAttendees === 1 ? '' : 's'}.`;
+            maxAttendeesText.textContent = `This invitation allows up to ${maxAttendees} attendee${maxAttendees === 1 ? '' : 's'}. Please include everyone in your party, including children.`;
             attendingCountInput.max = String(maxAttendees);
-            attendingCountInput.value = String(Math.min(Math.max(1, maxAttendees), 2));
+            attendingCountInput.value = String(maxAttendees);
 
             rsvpForm.classList.remove('hidden');
             lookupStatus.textContent = 'Invitation found. Please complete your RSVP below.';
         } catch (error) {
-            lookupStatus.textContent = error.message || 'Lookup failed. Please try again.';
+            lookupStatus.textContent =
+                error.message === 'Name not recognized on the invitation list'
+                    ? 'We could not find that name on the invitation list. Please contact Kaleb or James if this looks wrong.'
+                    : 'Lookup failed. Please try again, or contact Kaleb or James if the problem continues.';
         }
     });
 
@@ -155,7 +159,9 @@ import Layout from '../layouts/Layout.astro';
             if (!response.ok) throw new Error(data.error || 'Submission failed');
             window.location.href = '/rsvp/thanks';
         } catch (error) {
-            submitStatus.textContent = error.message || 'Submission failed. Please try again.';
+            submitStatus.textContent = error.message
+                ? `${error.message}. Please contact Kaleb or James if this looks wrong.`
+                : 'Submission failed. Please try again, or contact Kaleb or James if the problem continues.';
         }
     });
 </script>

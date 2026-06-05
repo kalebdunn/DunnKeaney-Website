@@ -113,7 +113,7 @@ Wedding data currently in file:
 - Couple: `Kaleb Dunn and James Keaney`
 - Date: `Sunday, September 6th, 2026`
 - Time: `4:00 PM`
-- Venue: `Melwood Arts Center`
+- Venue: `Mellwood Arts Center`
 - Location: `Louisville, Kentucky`
 - Dress code: `Cocktail attire`
 
@@ -300,4 +300,3 @@ These are known cleanup items, not necessarily urgent:
 - Wedding page image can include the dog
 - Footer uses a tight dog-eyes crop
 - User may continue iterating image crops manually in `Downloads` and ask to swap them in
-

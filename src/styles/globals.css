@@ -208,6 +208,24 @@
         @apply block w-full h-auto;
     }
 
+    .faq-list {
+        @apply space-y-8;
+    }
+
+    .faq-item {
+        @apply grid gap-2;
+    }
+
+    .faq-item dt {
+        @apply text-xl text-primary;
+        font-family: var(--font-serif);
+        font-weight: 500;
+    }
+
+    .faq-item dd {
+        @apply text-sm leading-relaxed sm:text-base;
+    }
+
     .markdown {
         > * {
             @apply my-6;

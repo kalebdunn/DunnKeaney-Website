@@ -19,3 +19,6 @@
 [2m20:31:28[22m [32mwatching for file changes...[39m
 [2m20:32:20[22m [34m[200][39m /api/rsvp-lookup [2m510ms[22m
 [2m20:32:56[22m [34m[200][39m /rsvp [2m104ms[22m
+[2m20:33:02[22m [34m[200][39m /api/rsvp-lookup [2m366ms[22m
+[2m20:33:16[22m [34m[200][39m [34mPOST[39m /api/rsvp-submit [2m1153ms[22m
+[2m20:33:16[22m [34m[200][39m /rsvp/thanks [2m2ms[22m
