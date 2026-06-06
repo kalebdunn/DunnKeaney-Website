@@ -208,6 +208,14 @@
         @apply block w-full h-auto;
     }
 
+    .wedding-actions {
+        @apply grid gap-3 sm:flex sm:items-center sm:justify-between;
+    }
+
+    .wedding-actions .btn {
+        @apply w-full sm:w-auto;
+    }
+
     .faq-list {
         @apply space-y-8;
     }
@@ -273,6 +281,14 @@
 
     .btn-accent:hover {
         background: color-mix(in oklab, var(--color-accent) 85%, black);
+    }
+
+    .btn-navy {
+        background: var(--color-primary-content);
+    }
+
+    .btn-navy:hover {
+        background: color-mix(in oklab, var(--color-primary-content) 85%, black);
     }
 
     .sr-only-field {

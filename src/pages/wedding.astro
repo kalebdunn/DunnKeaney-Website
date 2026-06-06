@@ -41,7 +41,7 @@ const registryUrl = 'https://www.crateandbarrel.com/gift-registry/james-keaney-a
                 <div>
                     <p class="eyebrow text-primary">Venue</p>
                     <p>{wedding.venue}</p>
-                    <p class="mt-1 text-sm text-primary/70">{wedding.room}</p>
+                    <p>{wedding.room}</p>
                 </div>
                 <div>
                     <p class="eyebrow text-primary">Location</p>
@@ -60,10 +60,10 @@ const registryUrl = 'https://www.crateandbarrel.com/gift-registry/james-keaney-a
             <div class="mt-10 pt-8" style="border-top: 1px solid var(--color-border);">
                 <p class="eyebrow text-primary">RSVP</p>
                 <p class="mb-5">Please respond using the online form.</p>
-                <div class="flex flex-wrap gap-3">
+                <div class="wedding-actions">
                     <a href="/rsvp" class="btn btn-accent">Go to RSVP</a>
                     <a href="/wedding/faq" class="btn">Read FAQ</a>
-                    <a href={registryUrl} class="btn">Registry</a>
+                    <a href={registryUrl} class="btn btn-navy">Registry</a>
                 </div>
             </div>
         </div>
