@@ -1,5 +1,11 @@
 ---
+import KalebLogo from '../components/KalebLogo.astro';
 import Logo from '../components/Logo.astro';
+
+const pathname = Astro.url.pathname;
+const isKalebSection = pathname === '/kaleb' || pathname.startsWith('/kaleb/');
+const isJamesSection = pathname === '/james' || pathname.startsWith('/james/');
+const isPersonalSection = isKalebSection || isJamesSection;
 
 const primaryNavItems = [
     { linkText: 'Home', href: '/' },
@@ -10,53 +16,82 @@ const personalNavItems = [
     { linkText: 'Kaleb', href: '/kaleb' },
     { linkText: 'James', href: '/james' }
 ];
+
+const kalebNavItems = [
+    { linkText: 'Kaleb', href: '/kaleb' },
+    { linkText: 'Resume', href: '/kaleb/resume' },
+    { linkText: 'How I Think', href: '/kaleb/thinking' }
+];
+
+const jamesNavItems = [{ linkText: 'James', href: '/james' }];
+
+const sectionNavItems = isKalebSection ? kalebNavItems : jamesNavItems;
+
+const exactNavItems = new Set(['/', '/kaleb', '/james']);
+const isCurrent = (href: string) => (exactNavItems.has(href) ? pathname === href : pathname === href || pathname.startsWith(`${href}/`));
 ---
 
 <nav class="site-nav">
     <a href="/" class="brand-link">
-        <Logo />
+        {isKalebSection ? <KalebLogo /> : <Logo />}
     </a>
     <ul class="nav-list">
-        {
-            primaryNavItems.map((item) => (
+        {isPersonalSection ? (
+            <>
+                {sectionNavItems.map((item) => (
+                    <li>
+                        <a href={item.href} class="nav-link" aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                            {item.linkText}
+                        </a>
+                    </li>
+                ))}
+                <li class="nav-divider" aria-hidden="true">|</li>
                 <li>
-                    <a href={item.href} class="nav-link">
-                        {item.linkText}
+                    <a href="/" class="nav-link">
+                        Family
                     </a>
                 </li>
-            ))
-        }
-        <li>
-            <details class="nav-group">
-                <summary class="nav-link">Wedding</summary>
-                <ul class="nav-submenu">
+            </>
+        ) : (
+            <>
+                {primaryNavItems.map((item) => (
                     <li>
-                        <a href="/wedding" class="nav-sublink">
-                            Details
+                        <a href={item.href} class="nav-link" aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                            {item.linkText}
                         </a>
                     </li>
-                    <li>
-                        <a href="/wedding/faq" class="nav-sublink">
-                            FAQ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/rsvp" class="nav-sublink">
-                            RSVP
-                        </a>
-                    </li>
-                </ul>
-            </details>
-        </li>
-        <li class="nav-divider" aria-hidden="true">|</li>
-        {
-            personalNavItems.map((item) => (
+                ))}
                 <li>
-                    <a href={item.href} class="nav-link">
-                        {item.linkText}
-                    </a>
+                    <details class="nav-group">
+                        <summary class="nav-link">Wedding</summary>
+                        <ul class="nav-submenu">
+                            <li>
+                                <a href="/wedding" class="nav-sublink">
+                                    Details
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/wedding/faq" class="nav-sublink">
+                                    FAQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/rsvp" class="nav-sublink">
+                                    RSVP
+                                </a>
+                            </li>
+                        </ul>
+                    </details>
                 </li>
-            ))
-        }
+                <li class="nav-divider" aria-hidden="true">|</li>
+                {personalNavItems.map((item) => (
+                    <li>
+                        <a href={item.href} class="nav-link" aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                            {item.linkText}
+                        </a>
+                    </li>
+                ))}
+            </>
+        )}
     </ul>
 </nav>

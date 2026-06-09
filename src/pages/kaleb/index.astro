@@ -2,24 +2,51 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Kaleb | Dunn-Keaney">
-    <section class="max-w-3xl">
-        <p class="eyebrow text-primary">Kaleb</p>
-        <h1 class="mb-6">Personal section</h1>
-        <p class="mb-10">A quiet home for resume details, essays, and selected projects.</p>
-    </section>
+<Layout
+    title="Kaleb | Dunn-Keaney"
+    description="Systems, judgment, work, and writing from Kaleb Dunn."
+    image="/images/kaleb-portrait.jpg"
+    mainClass="kaleb-main"
+>
+    <div class="kaleb-page">
+        <section class="kaleb-hero">
+            <div class="max-w-3xl">
+                <p class="eyebrow text-primary">Kaleb Dunn</p>
+                <h1 class="mb-6">I like understanding complicated systems.</h1>
+                <p class="mb-6 text-lg">
+                    I am interested in the conditions underneath visible results: what gets rewarded, what compounds, what trade-offs get hidden, and
+                    what kind of person an environment makes easier to become.
+                </p>
+            </div>
 
-    <section class="max-w-3xl grid gap-4 sm:grid-cols-2">
-        <a href="/kaleb/resume" class="paper-panel no-underline hover:opacity-90">
-            <p class="eyebrow text-primary">Resume</p>
-            <h2 class="mb-2 text-2xl">Professional profile</h2>
-            <p>Experience, projects, and technical strengths.</p>
-        </a>
+            <figure class="kaleb-portrait">
+                <img src="/images/kaleb-portrait.jpg" alt="Kaleb Dunn" width="1500" height="2250" loading="eager" />
+            </figure>
+        </section>
 
-        <div class="paper-panel">
-            <p class="eyebrow text-primary">Writing</p>
-            <h2 class="mb-2 text-2xl">Coming soon</h2>
-            <p>Essays and notes will be added here over time.</p>
-        </div>
-    </section>
+        <section class="section-gap grid gap-4 md:grid-cols-3">
+            <a href="/kaleb/resume" class="paper-panel no-underline hover:opacity-90">
+                <p class="eyebrow text-primary">Resume</p>
+                <h2 class="mb-2 text-2xl">Work history</h2>
+                <p>The practical record: roles, projects, tools, education, and professional background.</p>
+            </a>
+
+            <a href="/kaleb/thinking" class="paper-panel no-underline hover:opacity-90">
+                <p class="eyebrow text-primary">How I Think</p>
+                <h2 class="mb-2 text-2xl">A working map</h2>
+                <p>The organizing ideas: systems, compounding, trade-offs, risk, institutions, and agency.</p>
+            </a>
+
+            <div class="paper-panel">
+                <p class="eyebrow text-primary">Writing</p>
+                <h2 class="mb-2 text-2xl">Essays</h2>
+                <p>Future pieces on institutions, cities, technology, taste, and the shape of a good life.</p>
+            </div>
+        </section>
+
+        <section class="kaleb-closing-note">
+            <p class="eyebrow text-primary">Aside</p>
+            <p>I am usually trying to understand the structure before I argue about the outcome.</p>
+        </section>
+    </div>
 </Layout>

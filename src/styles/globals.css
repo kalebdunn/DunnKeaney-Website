@@ -110,6 +110,13 @@
         text-transform: uppercase;
     }
 
+    .nav-link[aria-current='page'] {
+        color: var(--color-primary);
+        text-decoration: underline;
+        text-underline-offset: 0.35em;
+        text-decoration-thickness: 1px;
+    }
+
     .nav-divider {
         @apply px-1 py-1 text-sm text-primary/45;
     }
@@ -144,6 +151,11 @@
 
     .page-content {
         @apply py-12 sm:py-16;
+    }
+
+    .kaleb-main {
+        @apply flex flex-col;
+        padding-bottom: 0;
     }
 
     .site-footer {
@@ -195,6 +207,105 @@
 
     .home-list {
         @apply space-y-3 text-sm sm:text-base;
+    }
+
+    .kaleb-hero {
+        @apply grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(18rem,0.75fr)] lg:items-end;
+    }
+
+    .kaleb-page {
+        @apply flex grow flex-col;
+    }
+
+    .kaleb-portrait {
+        @apply overflow-hidden;
+        border: 1px solid var(--color-border);
+        background: color-mix(in oklab, white 30%, var(--color-complementary));
+    }
+
+    .kaleb-portrait img {
+        @apply block h-auto w-full;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        object-position: 50% 26%;
+    }
+
+    .kaleb-focus {
+        @apply grid gap-4 sm:grid-cols-3;
+    }
+
+    .kaleb-focus p {
+        @apply border-l pl-4 text-sm leading-relaxed sm:text-base;
+        border-color: var(--color-border);
+    }
+
+    .kaleb-thought-line {
+        @apply py-6;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .kaleb-thought-line > p:last-child {
+        @apply text-xl leading-relaxed sm:text-2xl;
+        font-family: var(--font-serif);
+    }
+
+    .kaleb-closing-note {
+        @apply mt-auto pt-12 pb-1 text-sm leading-relaxed sm:pt-16 sm:pb-2;
+    }
+
+    .kaleb-closing-note > p:last-child {
+        @apply max-w-none;
+    }
+
+    .thinking-page {
+        @apply max-w-4xl;
+    }
+
+    .thinking-intro {
+        @apply max-w-3xl;
+    }
+
+    .thinking-intro > p:not(.eyebrow),
+    .thinking-section > p,
+    .thinking-section > ul {
+        @apply max-w-3xl;
+    }
+
+    .thinking-lede {
+        @apply mt-8 mb-6 text-2xl leading-snug sm:mt-10 sm:text-3xl;
+        font-family: var(--font-serif);
+    }
+
+    .thinking-index {
+        @apply mt-10 grid gap-2 py-5 text-sm sm:grid-cols-2 lg:grid-cols-4;
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .thinking-index a {
+        @apply no-underline text-primary;
+    }
+
+    .thinking-section {
+        @apply mt-14 sm:mt-18;
+    }
+
+    .thinking-section h2 {
+        @apply mb-5;
+    }
+
+    .thinking-section p {
+        @apply my-5;
+    }
+
+    .thinking-questions {
+        @apply my-6 grid gap-2;
+    }
+
+    .thinking-questions li {
+        @apply border-l pl-4;
+        border-color: var(--color-border);
     }
 
     .wedding-grid {

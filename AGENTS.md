@@ -39,6 +39,7 @@ Primary site routes:
 - `/rsvp`
 - `/rsvp/thanks`
 - `/kaleb`
+- `/kaleb/thinking`
 - `/kaleb/resume`
 - `/james`
 
@@ -63,6 +64,13 @@ Current header order:
 - `Kaleb`
 - `James`
 
+On personal section routes, the header becomes contextual:
+
+- `/kaleb` and `/kaleb/*`: `Kaleb`, `Resume`, `How I Think`, divider, `Family`
+- `/james` and `/james/*`: `James`, divider, `Family`
+
+The other person's page is intentionally suppressed while inside an individual section. `Family` links back to `/`.
+
 Wedding is a dropdown with:
 
 - `Details`
@@ -73,9 +81,12 @@ Relevant files:
 
 - [`src/components/Header.astro`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/components/Header.astro)
 - [`src/components/Logo.astro`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/components/Logo.astro)
+- [`src/components/KalebLogo.astro`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/components/KalebLogo.astro)
 - [`src/styles/globals.css`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/styles/globals.css)
 
 The text wordmark was replaced with a hand-drawn `DK` monogram SVG. The monogram uses a tightened viewBox and is bottom-aligned with the nav. Header bottom padding was reduced so the larger mark uses existing header space rather than pushing content down.
+
+Kaleb routes use a separate `KD` monogram in the header as a section-level mark. The favicon remains the household/domain `DK` mark.
 
 The favicon is also a monogram:
 
@@ -303,15 +314,25 @@ Newsletter page copy:
 Current pages:
 
 - [`src/pages/kaleb/index.astro`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/pages/kaleb/index.astro)
+- [`src/pages/kaleb/thinking.astro`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/pages/kaleb/thinking.astro)
 - [`src/pages/kaleb/resume.astro`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/src/pages/kaleb/resume.astro)
 
 Current Kaleb section includes:
 
-- personal-section intro
-- resume card linking to `/kaleb/resume`
-- writing card marked `Coming soon`
+- a portrait-led landing page
+- less careerist positioning around understanding complicated systems as part of an integrated personal self
+- no mid-hero CTA buttons; navigation happens through the section cards and contextual header
+- cards ordered from concrete to less concrete: work history, thinking, and future writing
+- a small full-width `Aside` note tucked just above the footer line instead of a three-card professional focus block
+- a long-form `/kaleb/thinking` page with sections on systems, compounding, trade-offs, decision environments, taste, risk, institutions, progress, position, and agency
 
-Resume content was populated from the `.docx` version of Kaleb's resume, not the PDF.
+Resume content was updated from `C:\Users\Kaleb\Downloads\Kaleb_Dunn_Ops_Resume.pdf`.
+
+Kaleb portrait asset:
+
+- [`public/images/kaleb-portrait.jpg`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/public/images/kaleb-portrait.jpg)
+
+The source image was `C:\Users\Kaleb\Downloads\DSC07029.jpg`. It was chosen over the formal headshot because it better matches the intended online signal: practical operator, strategy/operations orientation, and more personality than a standard white-background corporate portrait. The formal close-up headshot remains a better fit for LinkedIn/resume contexts if needed later.
 
 Temporary extraction files may exist in repo root:
 

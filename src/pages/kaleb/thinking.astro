@@ -1,0 +1,209 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const sections = [
+    'Systems',
+    'Compounding',
+    'Trade-offs',
+    'Decision Environments',
+    'Taste and Standards',
+    'Risk',
+    'People and Institutions',
+    'Progress and Position',
+    'Agency'
+];
+---
+
+<Layout
+    title="How I Think | Kaleb Dunn"
+    description="A working map of the systems, trade-offs, standards, risks, institutions, and agency Kaleb Dunn thinks about."
+    image="/images/kaleb-portrait.jpg"
+>
+    <article class="thinking-page">
+        <header class="thinking-intro">
+            <p class="eyebrow text-primary">Kaleb Dunn</p>
+            <h1 class="mb-6">How I think</h1>
+            <p>
+                I tend to see the world as a set of overlapping systems: incentives, constraints, habits, institutions, markets, relationships, and
+                defaults that shape what people do and what outcomes become likely.
+            </p>
+            <p>
+                My basic belief is that most things worth understanding are neither random nor fully controllable. They emerge from patterns. So I try
+                to pay attention to the conditions underneath the visible result: what is being rewarded, what is compounding, what trade-offs are
+                being hidden, what risks are being deferred, and what kinds of behavior the environment makes easier.
+            </p>
+            <p class="thinking-lede">
+                The goal is not to reduce life to a model. It is to build better judgment, make more durable decisions, and create more agency over
+                time.
+            </p>
+        </header>
+
+        <nav class="thinking-index" aria-label="How I Think sections">
+            {
+                sections.map((section) => (
+                    <a href={`#${section.toLowerCase().replaceAll(' ', '-').replaceAll('and', 'and')}`}>
+                        {section}
+                    </a>
+                ))
+            }
+        </nav>
+
+        <section class="thinking-section" id="systems">
+            <h2>Systems</h2>
+            <p>I tend to understand the world through systems.</p>
+            <p>
+                That does not mean I think everything is mechanical, predictable, or reducible to a clean model. Most things that matter are messier
+                than that: people have conflicting incentives, institutions preserve old decisions, markets overcorrect, cultures remember things
+                nobody has written down, and good intentions regularly produce bad outcomes.
+            </p>
+            <p>
+                But I do think systems are usually the right place to start.
+            </p>
+            <p>
+                When something works, I want to understand what conditions made it work. When something breaks, I want to understand whether the
+                failure came from execution, incentives, structure, or assumptions that stopped being true. I am usually less interested in isolated
+                events than in the pattern underneath them.
+            </p>
+        </section>
+
+        <section class="thinking-section" id="compounding">
+            <h2>Compounding</h2>
+            <p>A lot of my worldview comes back to compounding.</p>
+            <p>
+                Small advantages become large advantages when they are repeated over time. That is true in careers, relationships, health, money,
+                organizations, cities, and taste. It is also true in the other direction. Small bits of entropy accumulate. Deferred maintenance
+                becomes strategy by accident. A bad habit that looks harmless at 26 can become a life architecture by 36.
+            </p>
+            <p>Because of that, I care a lot about trajectory.</p>
+            <p>
+                I do not think every decision needs to be optimized. That is exhausting and usually fake. But I do think the recurring decisions
+                matter: where you spend your attention, what kinds of people you keep around you, what work you become known for, what standards you
+                quietly accept, what risks you avoid until they become unavoidable.
+            </p>
+            <p>The goal is not to win every move. The goal is to make moves that keep future moves open.</p>
+        </section>
+
+        <section class="thinking-section" id="trade-offs">
+            <h2>Trade-offs</h2>
+            <p>I am suspicious of advice that does not name the trade-off.</p>
+            <p>
+                Most serious decisions involve giving up something real. More ambition usually costs comfort. More optionality usually costs focus.
+                More stability can cost upside. More speed can cost quality. More independence can cost institutional support. There is rarely a free
+                version of the thing people are selling.
+            </p>
+            <p>So I try to ask:</p>
+            <ul class="thinking-questions">
+                <li>What does this make easier?</li>
+                <li>What does this make harder?</li>
+                <li>What has to be true for this to work?</li>
+                <li>What am I pretending is not a cost?</li>
+            </ul>
+            <p>That last question is usually the important one.</p>
+        </section>
+
+        <section class="thinking-section" id="decision-environments">
+            <h2>Decision Environments</h2>
+            <p>I try not to assume people are making decisions in a vacuum.</p>
+            <p>
+                Most behavior makes more sense when you understand the incentives, constraints, defaults, and feedback loops around it. People often
+                choose the option that is easiest to justify, easiest to repeat, least socially costly, or most immediately rewarded. That does not
+                mean the choice is optimal. It means the environment is doing more work than we usually admit.
+            </p>
+            <p>This is why I pay attention to decision design.</p>
+            <p>
+                Small changes in structure can produce large changes in behavior: what gets measured, what gets ignored, what requires friction, what
+                happens by default, what is rewarded publicly, and what is punished quietly. A system does not need to be malicious to create bad
+                outcomes. It just needs to make the wrong behavior easier than the right one.
+            </p>
+            <p>
+                I find that more useful than treating every outcome as a referendum on character. Character matters, but context often decides which
+                version of someone shows up.
+            </p>
+        </section>
+
+        <section class="thinking-section" id="taste-and-standards">
+            <h2>Taste and Standards</h2>
+            <p>I care about taste, but not in a precious way.</p>
+            <p>
+                Taste is a practical tool. It is the ability to notice when something is slightly off before it becomes obviously bad. It shows up in
+                writing, strategy, clothing, software, homes, music, food, presentations, and organizations. Taste is not the same as luxury. Often it
+                is the opposite: knowing what matters enough that you do not have to overpay for signals.
+            </p>
+            <p>
+                Good taste helps you allocate attention. It tells you where quality is structural and where it is just branding. It helps you see the
+                difference between something that is merely polished and something that is actually well-made.
+            </p>
+            <p>I value that distinction.</p>
+        </section>
+
+        <section class="thinking-section" id="risk">
+            <h2>Risk</h2>
+            <p>I am not naturally reckless, but I do think excessive risk avoidance has its own risk.</p>
+            <p>
+                There is a kind of safety that quietly shrinks your life. You avoid discomfort, then you avoid uncertainty, then you avoid the very
+                situations that create growth. You can make every individual decision defensible and still end up somewhere you did not choose.
+            </p>
+            <p>So I try to think about risk in terms of durability and reversibility.</p>
+            <p>
+                Some risks are survivable and useful. Some are asymmetric in the wrong direction. Some are mostly social embarrassment dressed up as
+                danger. Some are real, but become manageable if you prepare for them directly instead of vaguely worrying about them.
+            </p>
+            <p>The point is not to avoid risk. The point is to take the kinds of risk that create more agency over time.</p>
+        </section>
+
+        <section class="thinking-section" id="people-and-institutions">
+            <h2>People and Institutions</h2>
+            <p>I think people are shaped more by incentives and environments than most moral explanations allow.</p>
+            <p>
+                That does not remove responsibility. It just makes responsibility more useful. If a team keeps making the same mistake, the problem is
+                probably not that everyone forgot to be smart. If an institution produces strange behavior, the behavior is probably being rewarded
+                somewhere. If a person seems irrational, there is often a local logic that makes sense from where they are standing.
+            </p>
+            <p>
+                This is also why I care about institutions. They are memory systems. They carry assumptions forward. They can preserve trust,
+                competence, and continuity, or they can preserve dysfunction long after everyone involved has forgotten why it started.
+            </p>
+            <p>When institutions work, they make good behavior easier. When they fail, they make bad behavior feel inevitable.</p>
+        </section>
+
+        <section class="thinking-section" id="progress-and-position">
+            <h2>Progress and Position</h2>
+            <p>I am broadly optimistic about the future, but not in a sentimental way.</p>
+            <p>
+                My working assumption is that the world will continue getting materially richer, more technologically capable, and more complex. That
+                does not mean everyone benefits evenly. It does not mean institutions will handle the transition gracefully. It does not mean bad
+                outcomes disappear. Progress can raise the floor while still making people feel unstable, disoriented, or relatively worse off.
+            </p>
+            <p>But over long enough periods, I think competence, adaptability, and accumulated human capital remain heavily rewarded.</p>
+            <p>
+                That belief shapes how I think about my own life and work. I do not think the goal is to predict the future perfectly. The goal is to
+                stay useful as the world changes: to build durable skills, learn quickly, take responsibility, and keep improving the quality of
+                problems I am able to solve.
+            </p>
+            <p>
+                In practical terms, that means I care about maintaining a strong position. Not status for its own sake, but capability: the ability to
+                contribute in rooms where the stakes are higher, the constraints are real, and the answer is not obvious.
+            </p>
+            <p>
+                The future does not have to be easy for that to be a good strategy. It just has to keep rewarding people who can learn, adapt,
+                execute, and stay in the game.
+            </p>
+        </section>
+
+        <section class="thinking-section" id="agency">
+            <h2>Agency</h2>
+            <p>I care about building a life with increasing agency.</p>
+            <p>
+                That means enough financial stability to make decisions without panic. Enough health to participate fully. Enough skill to be useful
+                in hard rooms. Enough taste to know what is worth caring about. Enough humility to revise my views when reality disagrees. Enough
+                courage to move before certainty arrives.
+            </p>
+            <p>I do not think there is one correct version of a good life. But I do think there are better and worse ways to build one.</p>
+            <p>
+                The better versions tend to compound. They create more freedom, better judgment, deeper relationships, and more room to do meaningful
+                work.
+            </p>
+            <p>That is the direction I am trying to move.</p>
+        </section>
+    </article>
+</Layout>
