@@ -75,19 +75,21 @@
 
 @layer components {
     .site-nav {
-        @apply flex flex-wrap items-center gap-6 pt-8 pb-16 sm:pt-12 sm:pb-20;
+        @apply flex flex-wrap items-end gap-6 pt-8 pb-8 sm:pt-12 sm:pb-10;
         border-bottom: 1px solid var(--color-border);
     }
 
     .brand-link {
-        @apply no-underline;
+        @apply inline-flex items-center no-underline;
     }
 
     .site-mark {
-        font-family: var(--font-serif);
-        @apply text-2xl text-primary;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
+        @apply block h-18 w-auto text-primary sm:h-24;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 0.75;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
     .nav-list {
