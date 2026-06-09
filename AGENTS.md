@@ -20,7 +20,7 @@ The intended tone is calm, archival, restrained, and typography-led. The site sh
 - Astro 5
 - Netlify adapter
 - Tailwind CSS 4
-- React is installed for legacy starter/demo components, but the main site is Astro-first
+- Astro-first; React starter/demo components have been removed
 
 Important config:
 
@@ -42,14 +42,14 @@ Primary site routes:
 - `/kaleb/resume`
 - `/james`
 
-Starter/demo routes are still present and deployable:
+Starter/demo routes have been removed:
 
 - `/blobs`
 - `/edge`
 - `/image-cdn`
 - `/revalidation`
 
-They are no longer in primary navigation. If preparing for production cleanup, these should be removed or hidden behind an intentional dev-only path.
+Related demo APIs, demo helper components, demo images, React island code, and demo-only dependencies were also removed.
 
 ## Navigation And Brand
 
@@ -80,6 +80,8 @@ The text wordmark was replaced with a hand-drawn `DK` monogram SVG. The monogram
 The favicon is also a monogram:
 
 - [`public/favicon.svg`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/public/favicon.svg)
+- [`public/robots.txt`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/public/robots.txt)
+- [`public/sitemap.xml`](/C:/Users/Kaleb/Documents/projects/DunnKeaney%20Website/DunnKeaney-Website/public/sitemap.xml)
 
 Favicon details:
 
@@ -87,6 +89,8 @@ Favicon details:
 - blue-black monogram `#2C3340`
 - favicon URL is cache-busted in `Layout.astro` with `?v=dk-monogram-4`
 - favicon is deliberately simplified/heavier than the header mark for legibility at tab size
+
+`Layout.astro` defines canonical URLs and Open Graph/Twitter preview metadata. Default preview image is the homepage portrait; wedding-related pages override the preview image with `public/images/wedding-portrait.jpg`.
 
 Original user-provided source was `C:\Users\Kaleb\Downloads\DK Monogram v1.svg`.
 
@@ -405,10 +409,9 @@ Git status may require safe-directory configuration in sandboxed Codex because t
 
 Known cleanup items:
 
-- Remove starter/demo pages if no longer wanted: `/blobs`, `/edge`, `/image-cdn`, `/revalidation`
-- Remove starter/demo dependencies if those pages are deleted
 - Remove temporary resume extraction files from repo root if still present
-- Consider adding robots/sitemap metadata before broader sharing
+- Keep `public/sitemap.xml` in sync as public routes are added or removed
+- Consider dedicated social preview images if text-message/social sharing becomes important
 - Revisit homepage copy once the wedding launch is stable
 - Add actual content for James section
 - Add writing or project content for Kaleb section

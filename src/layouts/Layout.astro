@@ -8,9 +8,13 @@ import Footer from '../components/Footer.astro';
 interface Props {
     title: string;
     description?: string;
+    image?: string;
 }
 
-const { title, description = 'A personal site for family, writing, and correspondence.' } = Astro.props;
+const { title, description = 'A personal site for family, writing, and correspondence.', image = '/images/home-portrait-wide.jpg' } = Astro.props;
+const siteUrl = 'https://dunnkeaney.com';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const imageUrl = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -21,8 +25,19 @@ const { title, description = 'A personal site for family, writing, and correspon
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalUrl} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=dk-monogram-4" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
+        <meta property="og:site_name" content="Dunn-Keaney" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageUrl} />
     </head>
     <body class="antialiased text-primary-content bg-complementary">
         <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
